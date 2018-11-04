@@ -1,0 +1,26 @@
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+h1 {
+    width: 100%;
+    margin: 0;
+    border-bottom: solid black 2px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.relsuts-list p {
+   background-color:#dde5e7;
+}
+
+form {
+    border: solid black 1px;
+}
+
+form legend {
+    text-align: center;
+    font: 900;
+}
