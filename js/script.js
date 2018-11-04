@@ -2,9 +2,15 @@
 
 function getParks(stateCode, numOfResults) {
     fetch(`https://api.nps.gov/api/v1/parks?stateCode=${stateCode}&limit=${numOfResults}&start=10`)
-    .then(response => response.json())
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } throw new err(response.statusText);
+    }) 
     .then(responseJson => displayParks(responseJson))
-    .catch(error => alert('Something went wrong. Try again later.'));
+    .catch(err => {
+        $('#js-error-message').text(`Something went wrong: ${err.message}`)
+    });
 }
 
 function displayParks(responseJson) {
